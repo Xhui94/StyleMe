@@ -1,0 +1,2 @@
+class StylecartsController < ApplicationController
+end

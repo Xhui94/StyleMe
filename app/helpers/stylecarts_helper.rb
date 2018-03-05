@@ -1,0 +1,2 @@
+module StylecartsHelper
+end

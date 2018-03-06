@@ -13,6 +13,7 @@ class CreateUserContacts < ActiveRecord::Migration
       t.string :postal_code, null: false
       t.string :business_number, null: false
       t.string :cell_number
+      t.string :avatar
       t.timestamps null: false
     end
   end

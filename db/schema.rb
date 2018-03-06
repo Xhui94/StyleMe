@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305125610) do
+ActiveRecord::Schema.define(version: 20180306055749) do
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -49,14 +49,14 @@ ActiveRecord::Schema.define(version: 20180305125610) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.string   "email",                  limit: 255,   default: "", null: false
+    t.string   "encrypted_password",     limit: 255,   default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,     default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
@@ -65,9 +65,26 @@ ActiveRecord::Schema.define(version: 20180305125610) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email",      limit: 255
+    t.string   "first_name",             limit: 255,                null: false
+    t.string   "last_name",              limit: 255,                null: false
+    t.string   "username",               limit: 255
+    t.integer  "role",                   limit: 4
+    t.string   "stripe_publishable_key", limit: 255
+    t.string   "stripe_secret_key",      limit: 255
+    t.string   "stripe_user_id",         limit: 255
+    t.string   "stripe_currency",        limit: 255
+    t.string   "stripe_account_type",    limit: 255
+    t.text     "stripe_account_status",  limit: 65535
+    t.string   "address1",               limit: 255,                null: false
+    t.string   "address2",               limit: 255
+    t.string   "city",                   limit: 255,                null: false
+    t.string   "postal_code",            limit: 255,                null: false
+    t.string   "business_number",        limit: 255,                null: false
+    t.string   "cell_number",            limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     :sessions => "users/sessions",
     :passwords => "users/passwords",
     :confirmations => "users/confirmations"}
-  devise_scope :users do
+
+  devise_scope :user do
     get 'signup', to: 'users/registrations#new'
     get 'signin', to: 'users/sessions#new'
     delete 'signout', to: 'users/sessions#destroy'

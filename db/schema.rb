@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20180306224916) do
     t.string   "business_number",        limit: 255,   null: false
     t.string   "cell_number",            limit: 255
     t.string   "avatar",                 limit: 255
+    t.integer  "user_id",                limit: 4
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
   end

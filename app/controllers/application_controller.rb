@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(resource)
-    has_contact_info = User.find_by(user_id: current_user.id)
+    has_contact_info = User.find_by(current_user.id)
     # If logged in
     if !has_contact_info.nil?
       # If they were looking at a page before being forced to sign in

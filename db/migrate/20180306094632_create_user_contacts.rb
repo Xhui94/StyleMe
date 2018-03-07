@@ -14,6 +14,7 @@ class CreateUserContacts < ActiveRecord::Migration
       t.string :business_number, null: false
       t.string :cell_number
       t.string :avatar
+      t.integer :user_id
       t.timestamps null: false
     end
   end

@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   has_one :user_filter
   has_many :transactions
   has_and_belongs_to_many :styleboards
+  has_one :user_contact
 end

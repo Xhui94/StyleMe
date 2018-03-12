@@ -7,14 +7,16 @@ class CreateUserContacts < ActiveRecord::Migration
       t.string :stripe_currency
       t.string :stripe_account_type
       t.text :stripe_account_status
-      t.string :address1, null: false
+      t.string :address1
       t.string :address2
-      t.string :city, null: false
-      t.string :postal_code, null: false
-      t.string :business_number, null: false
+      t.string :city
+      t.string :postal_code
+      t.string :business_number
       t.string :cell_number
       t.string :avatar
       t.integer :user_id
+      t.integer :type_country_id
+      t.integer :type_region_id
       t.timestamps null: false
     end
   end

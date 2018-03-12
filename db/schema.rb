@@ -74,14 +74,16 @@ ActiveRecord::Schema.define(version: 20180306224916) do
     t.string   "stripe_currency",        limit: 255
     t.string   "stripe_account_type",    limit: 255
     t.text     "stripe_account_status",  limit: 65535
-    t.string   "address1",               limit: 255,   null: false
+    t.string   "address1",               limit: 255
     t.string   "address2",               limit: 255
-    t.string   "city",                   limit: 255,   null: false
-    t.string   "postal_code",            limit: 255,   null: false
-    t.string   "business_number",        limit: 255,   null: false
+    t.string   "city",                   limit: 255
+    t.string   "postal_code",            limit: 255
+    t.string   "business_number",        limit: 255
     t.string   "cell_number",            limit: 255
     t.string   "avatar",                 limit: 255
     t.integer  "user_id",                limit: 4
+    t.integer  "type_country_id",        limit: 4
+    t.integer  "type_region_id",         limit: 4
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
   end

@@ -27,6 +27,7 @@ gem 'mysql2' #h8sPg.?>x36?
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'font-awesome-rails'
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

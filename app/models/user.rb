@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :styleboards
   has_one :user_contact
   accepts_nested_attributes_for :user_contact
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(?:\.[a-z\d\-]+)*\.[a-z]+\z/i
+	validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }
 end
